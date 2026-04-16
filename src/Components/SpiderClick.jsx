@@ -12,12 +12,12 @@ export default function SpiderClick () {
 
 
   const handleClick = (e) => {
-    const spawnSpiders = Array.from({ length: 6 }, (_, i) =>  ({
+    const spawnSpiders = Array.from({ length: 4 }, (_, i) =>  ({
       id: Date.now() + i,
       x: e.clientX,
       y: e.clientY,
-      tx: `${(Math.random() - 0.5) * 100}px`,
-      ty: `${(Math.random() - 0.5) * 100}px`,
+      tx: `${(Math.random() - 0.5) * 160}px`,
+      ty: `${(Math.random() - 0.5) * 160}px`,
     }))
     setSpiders(prev => [...prev, ...spawnSpiders])
   }
@@ -28,12 +28,12 @@ export default function SpiderClick () {
   }, [])
 
   return (
-    <div className="fixed inset-0 pointer-events-none">
+    <div className="fixed inset-0 pointer-events-none z-50">
       {spiders.map(spider => (
         <img
           key={spider.id}
           src="/spider01.png"
-          className="absolute w-6 h-6 animate-spider"
+          className="absolute w-10 h-10 animate-spider"
           style={{ 
             left: spider.x, 
             top: spider.y,
