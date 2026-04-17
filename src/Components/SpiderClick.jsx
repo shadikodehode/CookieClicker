@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import spidersIcon from "/spider01.png";
 
 export default function SpiderClick () {
 
@@ -32,7 +33,7 @@ export default function SpiderClick () {
       {spiders.map(spider => (
         <img
           key={spider.id}
-          src="/spider01.png"
+          src={spidersIcon}
           className="absolute w-10 h-10 animate-spider"
           style={{ 
             left: spider.x, 
