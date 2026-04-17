@@ -14,6 +14,7 @@ export default function ScoreDisplay ({score, scorePerSecond}) {
     }
   }, [score])
 
+  
   return (
     <div className="mt-8 text-pink-800">
         <p className={`text-6xl font-bold ${scoreFx ? 'scale-115' : 'scale-100'} transition-transform`}>

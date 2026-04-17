@@ -25,7 +25,7 @@ export default function SpiderClick () {
   useEffect(() => {
     window.addEventListener('click', handleClick)
     return () => window.removeEventListener('click', handleClick)
-  }, [])
+  },)
 
   return (
     <div className="fixed inset-0 pointer-events-none z-50">
