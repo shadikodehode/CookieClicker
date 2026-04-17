@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function SpiderClick () {
 
@@ -11,7 +11,7 @@ export default function SpiderClick () {
   }, [spiders])
 
 
-  const handleClick = (e) => {
+  const handleClick = useCallback((e) => {
     const spawnSpiders = Array.from({ length: 4 }, (_, i) =>  ({
       id: Date.now() + i,
       x: e.clientX,
@@ -20,8 +20,8 @@ export default function SpiderClick () {
       ty: `${(Math.random() - 0.5) * 160}px`,
     }))
     setSpiders(prev => [...prev, ...spawnSpiders])
-  }
-
+  }, [])
+    
   useEffect(() => {
     window.addEventListener('click', handleClick)
     return () => window.removeEventListener('click', handleClick)

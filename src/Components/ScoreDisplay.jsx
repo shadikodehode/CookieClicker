@@ -15,10 +15,11 @@ export default function ScoreDisplay ({score, scorePerSecond}) {
   }, [score])
 
   return (
-    <div>
-      <p className={`text-4xl font-bold ${scoreFx ? 'scale-115' : 'scale-100'} transition-transform`}>
-        {score} pts
-      </p>
-      <p>{scorePerSecond} pts/sec</p>
+    <div className="mt-8 text-pink-800">
+        <p className={`text-6xl font-bold ${scoreFx ? 'scale-115' : 'scale-100'} transition-transform`}>
+          {score}
+        </p>
+        <p className="text-2xl font-bold">Spiders</p>
+      <div className="text-xs text-pink-900">{scorePerSecond} sp/sec</div>
     </div>
   )}
